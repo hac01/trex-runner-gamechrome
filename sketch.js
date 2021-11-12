@@ -10,6 +10,7 @@ var die;
 
 var beep;
 var jump;
+var hack;
 
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -62,7 +63,8 @@ function setup() {
   restart.addImage("restart",restartimg);
   restart.scale=0.5;
   restart.visible=false;
-  
+  hack=createSprite(70,160,150,150)
+  hack.visible=false;
   trex.setCollider("rectangle",0,0,25,40);
   
   score = 0;
@@ -73,6 +75,9 @@ function setup() {
 
 function draw() {
   background(250);
+   if(obstaclesGroup.isTouching(hack)){
+    trex.velocityY = 4; 
+   }
   
  if(gameState===PLAY) {
   
