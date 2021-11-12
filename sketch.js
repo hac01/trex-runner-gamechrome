@@ -63,8 +63,8 @@ function setup() {
   restart.addImage("restart",restartimg);
   restart.scale=0.5;
   restart.visible=false;
-  hack=createSprite(150,160,150,150)
-  hack.visible=false;
+  hack=createSprite(150,160,10,150)
+  hack.visible=true;
   trex.setCollider("rectangle",0,0,25,40);
   
   score = 0;
@@ -75,9 +75,7 @@ function setup() {
 
 function draw() {
   background(250);
-   if(obstaclesGroup.isTouching(hack)){
-    trex.velocityY = 4; 
-   }
+  
   
  if(gameState===PLAY) {
   
@@ -99,6 +97,9 @@ function draw() {
   
    trex.velocityY = trex.velocityY + 0.8
    
+    if(obstaclesGroup.isTouching(hack)){
+    trex.velocityY = 4; 
+   }
   
    
    spawnClouds();
