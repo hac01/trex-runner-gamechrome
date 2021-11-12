@@ -63,8 +63,8 @@ function setup() {
   restart.addImage("restart",restartimg);
   restart.scale=0.5;
   restart.visible=false;
-  hack=createSprite(70,160,150,150)
- // hack.visible=false;
+  hack=createSprite(150,160,150,150)
+  hack.visible=false;
   trex.setCollider("rectangle",0,0,25,40);
   
   score = 0;
